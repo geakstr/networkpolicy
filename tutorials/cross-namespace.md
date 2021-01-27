@@ -1,4 +1,4 @@
-# An h1 header
+# Cross namespace
 
 Paragraphs are separated by a blank line.
 
