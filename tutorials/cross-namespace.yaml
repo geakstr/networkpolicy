@@ -5,22 +5,22 @@ metadata:
   namespace: tenant-a
 spec:
   endpointSelector: {}    
-    ingress:
-      - fromEndpoints:
-          - {}
-      - fromEndpoints:
-          - matchLabels:
-              io.kubernetes.pod.namespace: tenant-b
-    egress:
-      - toEndpoints:
-          - {}
-      - toEndpoints:
-          - matchLabels:
-              io.kubernetes.pod.namespace: kube-system
-        toPorts:
-          - ports:
-              - port: 53
-                protocol: ANY
-            rules:
-              dns:
-                - matchPattern: "*"
+  ingress:
+    - fromEndpoints:
+        - {}
+    - fromEndpoints:
+        - matchLabels:
+            io.kubernetes.pod.namespace: tenant-b
+  egress:
+    - toEndpoints:
+        - {}
+    - toEndpoints:
+        - matchLabels:
+            io.kubernetes.pod.namespace: kube-system
+      toPorts:
+        - ports:
+            - port: 53
+              protocol: ANY
+          rules:
+            dns:
+              - matchPattern: "*"
